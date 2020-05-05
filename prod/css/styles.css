@@ -110,10 +110,36 @@ img {
   height: auto;
 }
 
+/* ubuntu-regular */
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu Regular'), local('Ubuntu-Regular'), url('../fonts/ubuntu-regular.woff2') format('woff2'),  url('../fonts/ubuntu-regular.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* ubuntu-700*/
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Ubuntu Bold'), local('Ubuntu-Bold'), url('../fonts/ubuntu-bold.woff2') format('woff2'),  url('../fonts/ubuntu-bold.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html {
+  font-size: 10px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -135,16 +161,15 @@ body {
 }
 
 body {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-family: 'Ubuntu', Arial, Helvetica Neue, Helvetica, sans-serif;
   margin: 0 auto;
   width: 100%;
   min-width: 320px;
-  max-width: 1440px;
   min-height: 100vh;
-  font-size: 1.8rem;
-  line-height: 1.5;
+  font-size: 1.6rem;
+  line-height: 2.7rem;
   background: #fff;
-  color: #303030;
+  color: #000000;
 }
 
 .content {
@@ -256,38 +281,27 @@ a {
   color: #000000;
 }
 
+h1,
+.h1 {
+  font-size: 6.6rem;
+  font-weight: 700;
+  line-height: 7.9rem;
+  color: #ffffff;
+}
+
 h2,
 .h2 {
-  font-size: 3.4rem;
+  font-size: 4.6rem;
+  font-weight: 700;
+  line-height: 5.5rem;
+  color: #000000;
 }
 
 h3,
 .h3 {
-  font-size: 2.6rem;
-  font-family: Arial;
+  font-size: 2.9rem;
   font-weight: 700;
-  color: #FFFFFF;
-}
-
-h4,
-.h4 {
-  font-size: 2.4rem;
-  font-weight: 600;
-  color: #545252;
-}
-
-h5,
-.h5 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #FFFFFF;
-}
-
-h6,
-.h6 {
-  font-size: 13px;
-  font-weight: 600;
-  color: #545252;
+  color: #000000;
 }
 
 .wrapper {
@@ -295,16 +309,6 @@ h6,
   margin: 0 auto;
   padding-left: 30px;
   padding-right: 30px;
-}
-
-.text {
-  line-height: 2.5rem;
-}
-
-.additional-text {
-  font-size: 1.6rem;
-  line-height: 2.1rem;
-  max-width: 1058px;
 }
 
 body.compensate-for-scrollbar {
@@ -345,14 +349,17 @@ body.compensate-for-scrollbar {
   }
 }
 
-@media screen and (max-width: 1200px) {
-  h6,
-  .h6 {
-    font-size: 16px;
+@media (max-width: 1200px) {
+  html {
+    font-size: 8.89px;
+    font-size: calc(16px / 1.8);
   }
+}
 
-  .additional-text {
-    line-height: inherit;
+@media (max-width: 992px) {
+  html {
+    font-size: 8.34px;
+    font-size: calc(15px / 1.8);
   }
 }
 
@@ -363,16 +370,16 @@ body.compensate-for-scrollbar {
   }
 }
 
-@media screen and (max-width: 720px) {
-  h6,
-  .h6 {
-    font-size: 14px;
+@media (max-width: 720px) {
+  html {
+    font-size: 7.78px;
+    font-size: calc(14px / 1.8);
   }
 }
 
-@media screen and (max-width: 450px) {
-  h6,
-  .h6 {
-    font-size: 12px;
+@media (max-width: 576px) {
+  html {
+    font-size: 6.67px;
+    font-size: calc(12px / 1.8);
   }
 }
