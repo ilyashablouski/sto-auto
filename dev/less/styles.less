@@ -12,17 +12,22 @@
   font-style: normal;
   font-weight: 400;
   src: local('Ubuntu Regular'), local('Ubuntu-Regular'),
-       url('../fonts/ubuntu-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/ubuntu-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('../fonts/ubuntu-regular.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/ubuntu-regular.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
 /* ubuntu-700*/
 @font-face {
   font-family: 'Ubuntu';
   font-style: normal;
   font-weight: 700;
   src: local('Ubuntu Bold'), local('Ubuntu-Bold'),
-       url('../fonts/ubuntu-bold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/ubuntu-bold.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('../fonts/ubuntu-bold.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/ubuntu-bold.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 html {
@@ -88,7 +93,7 @@ body {
   font-family: 'Ubuntu', Arial, Helvetica Neue, Helvetica, sans-serif;
   margin: 0 auto;
   width: 100%;
-  min-width: 320px; 
+  min-width: 320px;
   min-height: 100vh;
   font-size: 1.6rem;
   line-height: 2.7rem;
@@ -99,6 +104,10 @@ body {
 
 .content {
   flex: 1 0 auto;
+}
+
+.text {
+  margin-bottom: 1.6em;
 }
 
 button {
@@ -209,6 +218,7 @@ h1,
 
 h2,
 .h2 {
+  margin-bottom: 4rem;
   font-size: 4.6rem;
   font-weight: 700;
   line-height: 5.5rem;
@@ -217,8 +227,10 @@ h2,
 
 h3,
 .h3 {
-  font-size: 2.9rem;
+  margin-bottom: 2rem;
+  font-size: 2.4rem;
   font-weight: 700;
+  line-height: 2.9rem;
   color: @black;
 }
 
@@ -234,17 +246,364 @@ body.compensate-for-scrollbar {
 /*
  * 1. Header
 **/
+.header {
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid rgba(205, 205, 205, 0.7);
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 2;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  height: 62px;
+}
+
+.nav__item {
+  display: inline-block;
+  margin-right: 3rem;
+}
+
+.nav__link:hover {
+  text-decoration: underline;
+}
+
+.feedback-info {
+  margin-left: auto;
+  display: flex;
+}
+
+.feedback-info__phone-link {
+  margin-right: 2rem;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.button {
+  padding: 6.5px 46.9px;
+  background: @darkBlue;
+  color: @white;
+  border-radius: 100px;
+}
+
+.button:hover {
+  background: @hoverBlue;
+}
 
 /*
  * ! 1. Header
 **/
 
-
-
 /* 
  * 2. Main
 **/
+// about-section
+.about-section {
+  padding-bottom: 71px;
+  background: url(../images/main.jpg) no-repeat center center;
+  background-size: cover;
+}
 
+.about-section__inner {
+  .row-flex();
+  padding-top: 120px;
+}
+
+.about-section__item {
+  .col-padding();
+  color: @white;
+}
+
+.about-section__item:first-child {
+  flex: 0 0 59%;
+  max-width: 59%;
+}
+
+.about-section__item:last-child {
+  margin-left: auto;
+  text-align: right;
+  flex: 0 0 auto;
+}
+
+.about-section__text {
+  margin-top: 4.1rem;
+  font-size: 1.7rem;
+  line-height: 2rem;
+  color: @white;
+}
+
+.about-section__text span {
+  margin-top: 1.5rem;
+  display: inline-block;
+}
+
+
+.phones__link {
+  display: block;
+  color: inherit;
+}
+
+.phones__link::before {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  content: '';
+}
+
+.phone__link_velcom:before {
+  right: 5px;
+  width: 27px;
+  height: 20px;
+  background: url('../images/velcom_logo_v_color.png') no-repeat;
+  background-position: center center;
+  background-size: contain;
+
+}
+
+.phone__link_mts:before {
+  right: 7px;
+  width: 20px;
+  height: 20px;
+  background: url('../images/mts_logo.png') no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.calendar {
+  margin-top: 3.6rem;
+  font-weight: 700;
+}
+
+.adress {
+  margin-top: 2rem;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 700;
+  line-height: 1.9rem;
+}
+
+.adress::after {
+  margin-left: 10px;
+  display: inline-block;
+  content: '';
+  width: 24px;
+  height: 38px;
+  background: url('../images/marker-icon@2x.png') no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.organization {
+  margin-top: 7px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.factoid {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 35px;
+  bottom: -25px;
+  width: 13.4rem;
+  height: 13.4rem;
+  text-align: center;
+  line-height: 2rem;
+  background: #FFF400;
+  border-radius: 50%;
+}
+
+// work-info-section
+.work-info-section {
+  margin-top: 6rem;
+}
+
+.work-info-section .h2 {
+  text-align: center;
+}
+
+.work-info-section__inner {
+  .row-flex();
+
+}
+
+.work-info-section__item {
+  .col-padding();
+
+  flex: 0 0 47.15%;
+  max-width: 47.15%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+
+.list__inner {
+  display: flex;
+}
+
+.work-info-section__item .list {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.list__item {
+  padding-top: 5px;
+  position: relative;
+}
+
+.work-info-section__item .list__item {
+  padding-right: 2em;
+}
+
+.list__item:before {
+  margin-right: 6px;
+  content: '•';
+  position: absolute;
+  right: 100%;
+  letter-spacing: 0px;
+  text-decoration: none;
+  font-weight: normal;
+  font-style: normal;
+}
+
+// advantages-section
+.advantages-section {
+  margin-top: 6rem;
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+  background: @darkBlue;
+  color: @white;
+}
+
+.advantages-section .h2 {
+  text-align: center;
+  color: @white;
+}
+
+.advantages-section__inner {
+  .row-flex();
+}
+
+.advantages-section__item {
+  .col-padding();
+
+  flex: 0 0 17.15%;
+  max-width: 17.15%;
+}
+
+.advantages-section .advantages-section__title {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.advantages-section__text {
+  line-height: 1.9rem;
+}
+
+// exp-section 
+.line {
+  margin-top: 0;
+  max-width: 780px;
+}
+
+.exp-section {
+  padding-top: 6rem;
+}
+
+.exp-section .h2 {
+  text-align: center;
+}
+
+.exp-block {
+  .row-flex();
+
+  align-items: center;
+
+}
+
+.exp-block__item {
+  .col-padding();
+
+  flex: 0 0 47.15%;
+  max-width: 47.15%;
+}
+
+.exp-block__item img {
+  vertical-align: middle;
+}
+
+.exp-block_pad-cert {
+  padding-top: 1.5rem;
+}
+
+.exp-block_pad-repair {
+  padding-top: 3rem;
+}
+
+.exp-block_pad-auto {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.exp-block_pad-tire {
+  padding-top: 1rem;
+}
+
+.exp-block_pad-auto {}
+
+.cert-image {
+  margin-left: 10rem;
+  max-width: 306px;
+}
+
+.repairman-image {
+  margin-left: 10rem;
+  max-width: 355px;
+}
+
+.auto-logos {
+  margin-left: 10rem;
+}
+
+.repairman-tire {
+  margin-left: 6rem;
+  max-width: 354px;
+}
+
+.auto-lift {
+  margin-left: 10rem;
+  max-width: 200px;
+}
+
+// strengths-section
+.strengths-section {
+  padding-top: 5.2rem;
+  padding-bottom: 12.8rem;
+  background: url('../images/electrica-big.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: @white;
+}
+
+.strengths-section .h2 {
+  text-align: center;
+  color: @white;
+}
+
+.strengths-section .h3 {
+  color: @white;
+}
+.strengths-section .list__item {
+  padding-right: 2em;
+}
+.list {
+}
+.list__item {
+}
 /* 
  * ! 2. Main
 **/
