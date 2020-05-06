@@ -781,8 +781,16 @@ body.compensate-for-scrollbar {
   margin-bottom: 1rem;
 }
 
+.bonus-section .text {
+  margin-bottom: 0.5em;
+}
+
 .bonus-section-list {
   margin-top: 0;
+}
+
+.bonus-section-list__item_marg {
+  margin-bottom: 0.5em;
 }
 
 .bonus-section__wrapper {
