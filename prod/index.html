@@ -54,9 +54,9 @@
         </div>
         <div class="about-section__item">
           <div class="phones">
-            <a class="phones__link phone__link_velcom h3" href="tel:+375291523523">+375 29 1-523-523</a>
+            <a class="phones__link phone__link_velcom" href="tel:+375291523523">+375 29 1-523-523</a>
 
-            <a class="phones__link phone__link_mts h3" href="tel:+375297119119">+375 29 7-119-119</a>
+            <a class="phones__link phone__link_mts" href="tel:+375297119119">+375 29 7-119-119</a>
           </div>
 
           <div class="calendar">Пн-Сб 9.00—19.00, Вс 9—16</div>
@@ -279,7 +279,7 @@
 
   <section class="parts-section">
     <div class="wrapper">
-      <h3 class="h3">Запчасти в наличии</h3>
+      <h2 class="h2">Запчасти в наличии</h2>
       <div class="parts-section__inner">
         <div class="parts-section__text">
           <p class="text"><span>Машина не простаивает в ожидании детали.</span> Мы начинаем ремонт сразу,
@@ -296,8 +296,11 @@
             самостоятельно.</p>
         </div>
 
-        <div class="parts-section__factoid">2 часа<br><span>на заказ и доставку
-            любой детали</span>
+        <div class="parts-section__factoid">
+          <div class="factoid-lg">
+            <div class="factoid-lg__text"> 2 часа<br>
+              <span>на заказ и доставку<br> любой детали</span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -308,23 +311,37 @@
     <div class="wrapper">
       <div class="bonus-section__inner">
         <div class="bonus-section__item">
-          <h2 class="h2">Документы и оплата</h2>
-          <p class="text">Работаем по безналу. Быстро оформляем все документы:</p>
-          <ul class="list">
-            <li class="list__item">Договор</li>
-            <li class="list__item">Накладные</li>
-            <li class="list__item">Акты</li>
-          </ul>
-          <img src="" alt="">
+          <h2 class="h2">Документы<br> и оплата</h2>
+          <div class="bonus-section__wrapper">
+            <div class="bonus-section__wrapper-inner">
+              <p class="text">Работаем по безналу. Быстро оформляем все документы:</p>
+              <ol class="bonus-section-list">
+                <li class="bonus-section-list__item">Договор</li>
+                <li class="bonus-section-list__item">Накладные</li>
+                <li class="bonus-section-list__item">Акты</li>
+              </ol>
+            </div>
+
+
+            <div class="bonus-section__image">
+              <img src="images/list-icon@2x.png" alt="gift">
+            </div>
+          </div>
         </div>
 
         <div class="bonus-section__item">
-          <h2 class="h2">Бонусы и акции</h2>
-          <ul class="list">
-            <li class="list__item">При ремонте диагностика бесплатно</li>
-            <li class="list__item">Скидки постоянным клиентам</li>
-          </ul>
-          <img src="" alt="">
+          <h2 class="h2">Бонусы<br> и акции</h2>
+          <div class="bonus-section__wrapper">
+            <div class="bonus-section__wrapper-inner">
+              <ol class="bonus-section-list">
+                <li class="bonus-section-list__item">При ремонте диагностика бесплатно</li>
+                <li class="bonus-section-list__item">Скидки постоянным клиентам</li>
+              </ol>
+            </div>
+            <div class="bonus-section__image">
+              <img src="images/gift-icon@2x.png" alt="list">
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -355,7 +372,7 @@
 
       <form action="sendmail.php" method="POST" class="feedback-form">
         <textarea id="textarea" cols="30" rows="10" class="feedback-form__comment-input" name="message"></textarea>
-        <button type="submit" class="button feedback-btn" name="feedback-form-submit">Получить</button>
+        <button type="submit" class="button feedback-btn" name="feedback-form-submit">Записаться</button>
 
         <span class="feedback-form__meta">Мы перезвоним вам в течении 30 минут</span>
       </form>
@@ -365,9 +382,9 @@
 
   <footer class="footer">
     <div class="wrapper">
+      <h2 class="h2">Контакты</h2>
       <div class="footer__inner">
         <div class="footer__item">
-          <h2 class="h2">Контакты</h2>
           <div class="phones">
             <a class="phones__link phone__link_velcom" href="tel:+375291523523">+375 29 1-523-523</a>
 
@@ -382,16 +399,22 @@
         <div class="footer__item">
           <h3 class="h3">К нам удобно добираться</h3>
           <p class="text">Находимся рядом с МКАД Автомобилистов 6А (на территории центра Еврофорд)</p>
-          <div class="google-map"><iframe class="actAsDiv" style="width:100%;height:100%;" frameborder="0"
-              scrolling="no" marginheight="0" marginwidth="0"
+          <div class="google-map">
+            <iframe class="actAsDiv" style="width:100%;height:100%;" frameborder="0" scrolling="no" marginheight="0"
+              marginwidth="0"
               src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;q=%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2%206%D0%90&amp;aq=0&amp;ie=UTF8&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="copyright"></div>
+    <div class="copyright">
+      ООО «КонтинентСервис»<br>
+
+      Создано с помощью сервиса b2bсфера
+    </div>
   </footer>
+
 </body>
 
 </html>
