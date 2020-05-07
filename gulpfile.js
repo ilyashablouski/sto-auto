@@ -9,8 +9,8 @@ const {
 const less = require('gulp-less');
 const babel = require('gulp-babel');
 const gcmq = require('gulp-group-css-media-queries');
-// const autoprefixer = require('gulp-autoprefixer');
-// const cleanCSS = require('gulp-clean-css');
+const autoprefixer = require('gulp-autoprefixer');
+const cleanCSS = require('gulp-clean-css');
 const smartgrid = require('smart-grid');
 const browserSync = require('browser-sync').create();
 const rename = require('gulp-rename');
@@ -54,16 +54,16 @@ function css() {
   return src(config.root + config.css.src)
       .pipe(less())
       .pipe(gcmq())
-      // .pipe(dest(config.css.dest))
-      // .pipe(autoprefixer({
-      //   browsers: ['last 2 versions'],
-      // }))
-      // .pipe(cleanCSS({
-      //   level: 2,
-      // }))
-      // .pipe(rename({
-      //   extname: '.min.css',
-      // }))
+      .pipe(dest(config.css.dest))
+      .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+      }))
+      .pipe(cleanCSS({
+        level: 2,
+      }))
+      .pipe(rename({
+        extname: '.min.css',
+      }))
       .pipe(dest(config.css.dest))
       .pipe(browserSync.stream());
 }
