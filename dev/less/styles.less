@@ -518,6 +518,9 @@ body.compensate-for-scrollbar {
 .line {
   margin-top: 0;
   max-width: 780px;
+  border: none;
+  background-color: #D8D8D8;
+  height: 1px;
 }
 
 .exp-section {
@@ -777,6 +780,7 @@ body.compensate-for-scrollbar {
   border-radius: 7px;
   resize: none;
   outline: none;
+  overflow: hidden;
 }
 
 .feedback-form__comment-input:focus {
@@ -845,7 +849,11 @@ body.compensate-for-scrollbar {
   height: 374px;
 }
 
-
+iframe {
+  margin: 0;
+  border: 0;
+  overflow: hidden;
+}
 .copyright {
   margin-top: 10rem;
   text-align: center;
