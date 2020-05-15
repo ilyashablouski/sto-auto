@@ -1,2 +1,2 @@
 # sto-auto
-Single page web-site without adaptive
+Adaptive single page website.
