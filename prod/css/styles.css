@@ -489,6 +489,7 @@ body.compensate-for-scrollbar {
   color: inherit;
   font-size: 2.4rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .phones__link:first-child {
@@ -868,7 +869,7 @@ body.compensate-for-scrollbar {
 }
 
 .feedback-section {
-  padding: 7rem 0 8rem;
+  padding: 6rem 0 8rem;
   background: #E7F2FF;
 }
 
@@ -957,7 +958,7 @@ body.compensate-for-scrollbar {
 }
 
 .footer {
-  padding: 8rem 0 6rem;
+  padding: 6rem 0 6rem;
 }
 
 .footer__inner {
@@ -1011,6 +1012,11 @@ iframe {
   text-align: center;
   color: #9B9B9B;
   line-height: 19px;
+}
+
+.copyright a {
+  text-decoration: underline;
+  color: #e60b1a;
 }
 
 /*
@@ -1094,6 +1100,19 @@ iframe {
 
   .feedback-info__phone-link {
     font-size: 16px;
+  }
+
+  .feedback-section__item .phones {
+    display: inline-block;
+  }
+
+  .feedback-section__item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .feedback-section .h2 {
+    max-width: none;
   }
 
   .thanks-block {
@@ -1189,9 +1208,33 @@ iframe {
   }
 
   .factoid-lg {
+    margin: 0 auto;
     width: 20.3rem;
     height: 20.3rem;
     font-size: 4.5rem;
+  }
+
+  .bonus-section__item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .bonus-section-list {
+    padding-left: 15px;
+  }
+
+  .footer__item:last-child {
+    margin-top: 2rem;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .footer__time {
+    margin-left: 0;
+  }
+
+  .google-map {
+    max-width: none;
   }
 }
 
@@ -1205,6 +1248,10 @@ iframe {
   .about-section__item:last-child {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .feedback-section__item .phones__link {
+    font-size: 3rem;
   }
 
   .factoid {
@@ -1286,6 +1333,33 @@ iframe {
   .exp-block__item .list {
     text-align: left;
     margin-bottom: 1.6em;
+  }
+
+  .parts-section__text {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .parts-section__factoid {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .feedback-section .phone__link_velcom:before {
+    width: 35px;
+    height: 26.66666667px;
+  }
+
+  .feedback-btn {
+    display: block;
+    padding: 0.56em 1.33em;
+    font-size: 2rem;
+  }
+
+  .feedback-form__meta {
+    margin-top: 10px;
+    margin-left: 0;
+    display: block;
   }
 }
 
