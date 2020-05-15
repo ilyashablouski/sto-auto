@@ -47,26 +47,26 @@ html {
   }
 }
 
-@media (max-width: 992px) {
-  html {
-    font-size: 8.34px;
-    font-size: calc(15px / 1.8);
-  }
-}
+// @media (max-width: 992px) {
+//   html {
+//     font-size: 8.34px;
+//     font-size: calc(15px / 1.8);
+//   }
+// }
 
-@media (max-width: 720px) {
-  html {
-    font-size: 7.78px;
-    font-size: calc(14px / 1.8);
-  }
-}
+// @media (max-width: 720px) {
+//   html {
+//     font-size: 7.78px;
+//     font-size: calc(14px / 1.8);
+//   }
+// }
 
-@media (max-width: 576px) {
-  html {
-    font-size: 6.67px;
-    font-size: calc(12px / 1.8);
-  }
-}
+// @media (max-width: 576px) {
+//   html {
+//     font-size: 6.67px;
+//     font-size: calc(12px / 1.8);
+//   }
+// }
 
 *,
 *:before,
@@ -218,6 +218,26 @@ h1,
   font-weight: 700;
   line-height: 7.9rem;
   color: @white;
+
+  .md-block( {
+      font-size: 5rem;
+      line-height: 5.9rem;
+    }
+
+  );
+
+  .sm-block( {
+      font-size: 4.5rem;
+    }
+
+  );
+
+  .xxs-block( {
+      font-size: 3.7rem;
+      line-height: 4.9rem;
+    }
+
+  );
 }
 
 h2,
@@ -227,6 +247,13 @@ h2,
   font-weight: 700;
   line-height: 5.5rem;
   color: @black;
+
+  .xs-block( {
+      font-size: 3.5rem;
+      line-height: 3.5rem;
+    }
+
+  );
 }
 
 h3,
@@ -264,18 +291,151 @@ body.compensate-for-scrollbar {
   height: 62px;
 }
 
-.nav__item {
-  display: inline-block;
-  margin-right: 3rem;
+.nav {
+  font-size: 16px;
+
+  .sm-block( {
+      padding-top: 62px;
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 250px;
+      height: 100vh;
+      background: @white;
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      box-shadow: 1px 0 6px rgba(0, 0, 0, .2);
+      z-index: 5;
+      transition: .25s;
+    }
+
+  );
+
+  &__item {
+    display: inline-block;
+    margin-right: 3rem;
+
+    .md-block( {
+        margin-right: 2rem;
+
+      }
+
+    );
+
+    .sm-block( {
+        padding: 12px 15px;
+        margin: 0;
+        display: block;
+      }
+
+    );
+
+
+
+    &:hover {
+      .sm-block( {
+          background: @hoverBlue;
+        }
+
+      );
+
+    }
+  }
+
+  &__link {
+    display: block;
+
+    &:hover {
+      text-decoration: underline;
+
+      .sm-block( {
+          text-decoration: none;
+          color: @white;
+        }
+
+      );
+    }
+  }
 }
 
-.nav__link:hover {
-  text-decoration: underline;
+.menu__btn {
+  display: none;
+
+  .sm-block( {
+      display: flex;
+      align-items: center;
+      position: relative;
+      left: 0;
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+      z-index: 6;
+    }
+
+  );
+
+  >span,
+  >span::before,
+  >span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: @darkBlue;
+    -webkit-transition: .25s;
+    transition: .25s;
+  }
+
+  >span::before {
+    content: '';
+    top: -8px;
+  }
+
+  >span::after {
+    content: '';
+    top: 8px;
+  }
+}
+
+.menu__btn_active span {
+  transform: rotate(45deg);
+
+  &::before {
+    top: 0;
+    transform: rotate(0);
+  }
+
+  &::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+}
+
+.menu__btn_active~.nav {
+  left: 0;
 }
 
 .feedback-info {
   margin-left: auto;
   display: flex;
+
+  &__button {
+    .md-block( {
+        padding: 6.5px 20.9px;
+
+      }
+
+    );
+
+    .xxs-block( {
+        padding: 6.5px 10.9px;
+
+      }
+
+    );
+
+  }
 }
 
 .feedback-info__phone-link {
@@ -283,6 +443,12 @@ body.compensate-for-scrollbar {
   font-size: 18px;
   font-weight: 700;
   line-height: 40px;
+
+  .md-block( {
+      font-size: 16px;
+    }
+
+  );
 }
 
 .button {
@@ -324,12 +490,34 @@ body.compensate-for-scrollbar {
 .about-section__item:first-child {
   flex: 0 0 59%;
   max-width: 59%;
+
+  .sm-block( {
+      flex: 0 0 100%;
+      max-width: 100%;
+
+    }
+
+  );
 }
 
 .about-section__item:last-child {
   margin-left: auto;
   text-align: right;
   flex: 0 0 auto;
+
+  .sm-block( {
+      margin-left: 0;
+      margin-top: 3rem;
+    }
+
+  );
+
+  .xs-block( {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  );
 }
 
 .about-section__text {
@@ -426,6 +614,25 @@ body.compensate-for-scrollbar {
   line-height: 2rem;
   background: #FFF400;
   border-radius: 50%;
+
+  .sm-block( {
+      bottom: 0;
+    }
+
+  );
+
+  .xs-block( {
+      margin: 0 auto;
+      margin-top: 3rem;
+      position: relative;
+      right: 0;
+      width: 14.4rem;
+      height: 14.4rem;
+      font-size: 16px;
+      line-height: 2.3rem;
+    }
+
+  );
 }
 
 // work-info-section
@@ -450,21 +657,51 @@ body.compensate-for-scrollbar {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+
+  &:last-child {
+    .sm-block( {
+        margin-top: 3rem;
+      }
+
+    );
+  }
+
+  .sm-block( {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+  );
 }
+
 
 
 .list__inner {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .work-info-section__item .list {
   flex: 0 0 50%;
   max-width: 50%;
+
+  .xs-block( {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+  );
 }
 
 .list__item {
   padding-top: 5px;
   position: relative;
+
+  .sm-block( {
+      padding-left: 10px;
+    }
+
+  );
 }
 
 .work-info-section__item .list__item {
@@ -480,6 +717,12 @@ body.compensate-for-scrollbar {
   text-decoration: none;
   font-weight: normal;
   font-style: normal;
+
+  .sm-block( {
+      margin-right: -5px;
+    }
+
+  );
 }
 
 // advantages-section
@@ -505,15 +748,48 @@ body.compensate-for-scrollbar {
 
   flex: 0 0 20%;
   max-width: 20%;
+
+  .xs-block( {
+      margin-bottom: 3rem;
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+    }
+
+  );
+
+  &:nth-child(4),
+  &:nth-child(5) {
+    .xs-block( {
+        flex: 0 0 50%;
+        max-width: 50%;
+        margin-bottom: 0;
+      }
+
+    );
+
+  }
+
 }
 
 .advantages-section .advantages-section__title {
   margin-bottom: 1rem;
   text-align: left;
+
+  .xs-block( {
+      text-align: center;
+    }
+
+  );
 }
 
 .advantages-section__text {
   line-height: 1.9rem;
+
+  .xs-block( {
+      text-align: center;
+    }
+
+  );
 }
 
 // exp-section 
@@ -538,6 +814,13 @@ body.compensate-for-scrollbar {
 
   align-items: center;
 
+  &__image {
+    .xs-block( {
+        margin: 0 auto;
+      }
+
+    );
+  }
 }
 
 .exp-block__item {
@@ -545,6 +828,14 @@ body.compensate-for-scrollbar {
 
   flex: 0 0 50%;
   max-width: 50%;
+
+  .xs-block( {
+      flex: 0 0 100%;
+      max-width: 100%;
+      text-align: center;
+    }
+
+  );
 }
 
 .exp-block__item img {
@@ -553,6 +844,28 @@ body.compensate-for-scrollbar {
 
 .exp-block_pad-cert {
   padding-top: 1.5rem;
+
+  .xs-block( {
+      padding-top: 0;
+    }
+
+  );
+}
+
+.exp-block_pad-cert .exp-block__item:first-child {
+  .xs-block( {
+      order: 2;
+    }
+
+  );
+}
+
+.exp-block_pad-cert .exp-block__item:last-child {
+  .xs-block( {
+      order: 1;
+    }
+
+  );
 }
 
 .exp-block_pad-repair {
@@ -562,13 +875,61 @@ body.compensate-for-scrollbar {
 .exp-block_pad-auto {
   padding-top: 6rem;
   padding-bottom: 6rem;
+
+  .xs-block( {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+  );
+}
+
+.exp-block_pad-auto .exp-block__item:first-child {
+  .xs-block( {
+      order: 2;
+    }
+
+  );
+}
+
+.exp-block_pad-auto .exp-block__item:last-child {
+  .xs-block( {
+      order: 1;
+    }
+
+  );
 }
 
 .exp-block_pad-tire {
   padding-top: 1rem;
+
+  .xs-block( {
+      padding-top: 3rem;
+    }
+
+  );
 }
 
-.exp-block_pad-auto {}
+.exp-block__item .list {
+  .xs-block( {
+      text-align: left;
+      margin-bottom: 1.6em;
+    }
+
+  );
+}
+
+.cert-image,
+.repairman-image,
+.auto-logos,
+.repairman-tire,
+.auto-lift {
+  .sm-block( {
+      margin: 0;
+    }
+
+  );
+}
 
 .cert-image {
   margin-left: 10rem;
@@ -659,6 +1020,14 @@ body.compensate-for-scrollbar {
   background: @darkBlue;
   color: @white;
   border-radius: 50%;
+
+  .sm-block( {
+      width: 20.3rem;
+      height: 20.3rem;
+      font-size: 4.5rem;
+    }
+
+  );
 }
 
 .factoid-lg span {
@@ -856,6 +1225,7 @@ iframe {
   border: 0;
   overflow: hidden;
 }
+
 .copyright {
   margin-top: 10rem;
   text-align: center;
