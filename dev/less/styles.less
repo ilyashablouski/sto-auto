@@ -430,6 +430,7 @@ body.compensate-for-scrollbar {
 }
 
 .button {
+  display: inline-block;
   padding: 6.5px 46.9px;
   background: @darkBlue;
   color: @white;
@@ -598,8 +599,6 @@ body.compensate-for-scrollbar {
 }
 
 .factoid {
-  display: flex;
-  align-items: center;
   position: absolute;
   right: 35px;
   bottom: -25px;
@@ -628,6 +627,12 @@ body.compensate-for-scrollbar {
     }
 
   );
+
+  span {
+    display: inline-block;
+    margin-top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 // work-info-section

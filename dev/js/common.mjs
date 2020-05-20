@@ -14,9 +14,9 @@ function openMenu() {
 /**
  * Change tab-content
  *
+ * @param {HTMLElement} target
  */
-function changeTabContent() {
-  const target = event.currentTarget;
+function changeTabContent(target) {
   const contentTab = target.nextElementSibling;
   if (target.classList.contains('is-select')) {
     hideAllTab();
@@ -62,7 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Call change tab-content
   if (document.documentElement.clientWidth <= 576) {
     for (const tabButton of tabButtons) {
-      tabButton.addEventListener('click', changeTabContent);
+      tabButton.addEventListener('click', (event) => {
+        changeTabContent(event.currentTarget);
+      });
     }
   }
 });

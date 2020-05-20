@@ -418,6 +418,7 @@ body.compensate-for-scrollbar {
 }
 
 .button {
+  display: inline-block;
   padding: 6.5px 46.9px;
   background: #0062B6;
   color: #ffffff;
@@ -551,8 +552,6 @@ body.compensate-for-scrollbar {
 }
 
 .factoid {
-  display: flex;
-  align-items: center;
   position: absolute;
   right: 35px;
   bottom: -25px;
@@ -562,6 +561,12 @@ body.compensate-for-scrollbar {
   line-height: 2rem;
   background: #FFF400;
   border-radius: 50%;
+}
+
+.factoid span {
+  display: inline-block;
+  margin-top: 50%;
+  transform: translateY(-50%);
 }
 
 .work-info-section {
