@@ -56,7 +56,7 @@ function css() {
       .pipe(gcmq())
       .pipe(dest(config.css.dest))
       .pipe(autoprefixer({
-        browsers: ['last 2 versions'],
+        overrideBrowserslist: ['last 2 versions'],
       }))
       .pipe(cleanCSS({
         level: 2,

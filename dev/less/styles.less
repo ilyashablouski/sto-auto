@@ -57,10 +57,10 @@ html {
   -moz-font-smoothing: antialiased;
   -ms-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
 }
 
 html,
@@ -68,7 +68,6 @@ body {
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 100%;
 }
 
 body {
@@ -722,8 +721,6 @@ body.compensate-for-scrollbar {
 
 .js-dropdown-block {
   .xs-block( {
-      // display: none;
-
       height: 0;
       overflow: hidden;
       transition: height .25s;
@@ -735,17 +732,17 @@ body.compensate-for-scrollbar {
 .is-rotate {
   transform: rotate(-135deg) !important;
 }
+
 // ! dropdown
 
 .list__inner {
-  display: flex;
-  flex-wrap: wrap;
-
   .xs-block( {
-      display: block;
+      display: block
     }
 
-  )
+  );
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .work-info-section__item .list {
@@ -1085,6 +1082,7 @@ body.compensate-for-scrollbar {
   max-width: 36.72%;
 
   .xs-block( {
+      justify-content: center;
       flex: 0 0 100%;
       max-width: 100%;
     }
@@ -1103,7 +1101,6 @@ body.compensate-for-scrollbar {
   border-radius: 50%;
 
   .sm-block( {
-      margin: 0 auto;
       width: 20.3rem;
       height: 20.3rem;
       font-size: 4.5rem;

@@ -150,10 +150,10 @@ html {
   -moz-font-smoothing: antialiased;
   -ms-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
 }
 
 html,
@@ -161,7 +161,6 @@ body {
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 100%;
 }
 
 body {
@@ -1224,7 +1223,6 @@ iframe {
   }
 
   .factoid-lg {
-    margin: 0 auto;
     width: 20.3rem;
     height: 20.3rem;
     font-size: 4.5rem;
@@ -1393,6 +1391,7 @@ iframe {
   }
 
   .parts-section__factoid {
+    justify-content: center;
     flex: 0 0 100%;
     max-width: 100%;
   }
